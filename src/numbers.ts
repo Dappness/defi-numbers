@@ -22,7 +22,7 @@ export const FIAT_FORMAT_WITHOUT_DECIMALS = "0,0";
 export const TOKEN_FORMAT_A = "0,0.[0000]a";
 export const TOKEN_FORMAT_A_BIG = "0,0.[00]a";
 export const TOKEN_FORMAT = "0,0.[0000]";
-export const PERCENTAGE_FORMAT = "0,0.00%";
+export const PERCENTAGE_FORMAT = "0,0.[00]%";
 
 // Do not display percentage values greater than this amount; they are likely to be nonsensical.
 export const PERCENTAGE_UPPER_THRESHOLD = 1_000_000;

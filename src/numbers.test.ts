@@ -78,12 +78,12 @@ describe("tokenFormat", () => {
 describe("percentage", () => {
 	test("Abbreviated formats", () => {
 		expect(fNum("percentage", "0.10")).toBe("10%");
-		expect(fNum("percentage", "0.0010")).toBe("0%");
-		expect(fNum("percentage", "0.0016")).toBe("0%");
-		expect(fNum("percentage", "0.0001")).toBe("0%");
-		expect(fNum("percentage", "0.00001")).toBe("0%");
-		expect(fNum("percentage", "0.00009")).toBe("0%");
-		expect(fNum("percentage", "0.000007595846919227514")).toBe("0%");
+		expect(fNum("percentage", "0.0010")).toBe("0.1%");
+		expect(fNum("percentage", "0.0016")).toBe("0.16%");
+		expect(fNum("percentage", "0.0001")).toBe("0.01%");
+		expect(fNum("percentage", "0.00001")).toBe("<0.01%");
+		expect(fNum("percentage", "0.00009")).toBe("<0.01%");
+		expect(fNum("percentage", "0.000007595846919227514")).toBe("<0.01%");
 	});
 });
 
@@ -101,6 +101,6 @@ test("all formats types do not break with super small inputs (AKA dust)", () => 
 
 	expect(fNum("fiat", dust)).toBe("<0.001");
 	expect(fNum("integer", dust)).toBe("0");
-	expect(fNum("percentage", dust)).toBe("0%");
+	expect(fNum("percentage", dust)).toBe("<0.01%");
 	expect(fNum("token", dust)).toBe("< 0.00001");
 });
