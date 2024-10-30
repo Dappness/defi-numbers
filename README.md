@@ -22,9 +22,11 @@ npm i defi-numbers
 ```
 
 ```ts
-import { greet } from "defi-numbers";
+import { fNum } from "defi-numbers";
 
-greet("Hello, world! 💖");
+fNum("token", "12345"); // -> 12.35k
+fNum("token", "12345", { abbreviated: false }); // -> 12,345;
+fNum("token", "12345.678910", { abbreviated: false }); // -> 12,345.6789
 ```
 
 ## Contributors

@@ -72,6 +72,7 @@ describe("tokenFormat", () => {
 		expect(fNum("token", "56789.12345678", { abbreviated: false })).toBe(
 			"56,789.1235",
 		);
+		expect(fNum("token", "12345", { abbreviated: false })).toBe("12,345");
 	});
 });
 
