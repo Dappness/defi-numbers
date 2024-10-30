@@ -8,5 +8,14 @@
 		"node_modules",
 		"pnpm-lock.yaml"
 	],
-	"words": ["defi", "tseslint"]
+	"words": [
+		"bignumber",
+		"defi",
+		"knip",
+		"Numberish",
+		"packagejson",
+		"tseslint",
+		"tsup",
+		"viem"
+	]
 }
