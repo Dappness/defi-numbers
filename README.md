@@ -37,7 +37,6 @@ greet("Hello, world! 💖");
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://dappness.com/"><img src="https://avatars.githubusercontent.com/u/2406506?v=4?s=100" width="100px;" alt="Gareth Fuller"/><br /><sub><b>Gareth Fuller</b></sub></a><br /><a href="https://github.com/Dappness/defi-numbers/commits?author=garethfuller" title="Code">💻</a> <a href="#content-garethfuller" title="Content">🖋</a> <a href="https://github.com/Dappness/defi-numbers/commits?author=garethfuller" title="Documentation">📖</a> <a href="#ideas-garethfuller" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-garethfuller" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-garethfuller" title="Maintenance">🚧</a> <a href="#projectManagement-garethfuller" title="Project Management">📆</a> <a href="#tool-garethfuller" title="Tools">🔧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a></td>
     </tr>
   </tbody>
 </table>
