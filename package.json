@@ -1,6 +1,6 @@
 {
 	"name": "defi-numbers",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "Number formatting and utilities for DeFi apps.",
 	"repository": {
 		"type": "git",
