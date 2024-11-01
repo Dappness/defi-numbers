@@ -1,3 +1,13 @@
+# [0.2.0](https://github.com/Dappness/defi-numbers/compare/0.1.0...0.2.0) (2024-11-01)
+
+### Features
+
+- Trigger release ([f8690e3](https://github.com/Dappness/defi-numbers/commit/f8690e30412bee59da7bd64673269389697fd65a))
+
+### Reverts
+
+- Revert "chore: Cleanup and add documentation" ([e6ff2b6](https://github.com/Dappness/defi-numbers/commit/e6ff2b63ea8577e843c30352b5b9aad7d4fba914))
+
 # 0.1.0 (2024-10-30)
 
 ### Features
