@@ -49,7 +49,7 @@ fNum("integer", "0.123"); // -> 0
 
 ### Utility Functions
 
-```ts
+```tsx
 import { bn, safeSum, blockInvalidNumberInput } from "defi-numbers";
 
 // Create BigNumber instances
@@ -59,7 +59,7 @@ bn("123.456").gte(100); // -> true
 safeSum(["0.1", "0.2", "0.3"]); // -> "0.6"
 
 // Block invalid number input in React
-<input type="number" onKeyDown={blockInvalidNumberInput} />
+<input type="number" onKeyDown={blockInvalidNumberInput} />;
 ```
 
 ## Contributors

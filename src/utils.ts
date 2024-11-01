@@ -1,3 +1,4 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable n/no-missing-import */
 import { BigNumber } from "bignumber.js";
 
