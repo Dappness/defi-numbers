@@ -21,12 +21,45 @@
 npm i defi-numbers
 ```
 
+### Basic Usage
+
 ```ts
 import { fNum } from "defi-numbers";
 
+// Token amounts
 fNum("token", "12345"); // -> 12.35k
-fNum("token", "12345", { abbreviated: false }); // -> 12,345;
-fNum("token", "12345.678910", { abbreviated: false }); // -> 12,345.6789
+fNum("token", "12345", { abbreviated: false }); // -> 12,345
+fNum("token", "0.001234"); // -> 0.0012
+fNum("token", "0.00001"); // -> < 0.00001
+
+// Fiat values
+fNum("fiat", "1234.56"); // -> 1.23k
+fNum("fiat", "1234.56", { abbreviated: false }); // -> 1,234.56
+fNum("fiat", "0.001"); // -> < 0.01
+
+// Percentages
+fNum("percentage", "0.10"); // -> 10%
+fNum("percentage", "0.001"); // -> 0.1%
+fNum("percentage", "0.00001"); // -> < 0.01%
+
+// Integers
+fNum("integer", "1234567"); // -> 1,234,567
+fNum("integer", "0.123"); // -> 0
+```
+
+### Utility Functions
+
+```ts
+import { bn, safeSum, blockInvalidNumberInput } from "defi-numbers";
+
+// Create BigNumber instances
+bn("123.456").gte(100); // -> true
+
+// Sum array of numbers safely
+safeSum(["0.1", "0.2", "0.3"]); // -> "0.6"
+
+// Block invalid number input in React
+<input type="number" onKeyDown={blockInvalidNumberInput} />
 ```
 
 ## Contributors
@@ -48,7 +81,3 @@ fNum("token", "12345.678910", { abbreviated: false }); // -> 12,345.6789
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- spellchecker: enable -->
-
-<!-- You can remove this notice if you don't want it 🙂 no worries! -->
-
-> 💙 This package was templated with [`create-typescript-app`](https://github.com/JoshuaKGoldberg/create-typescript-app).
