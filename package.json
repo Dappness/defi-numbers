@@ -27,6 +27,7 @@
 		"lint:packages": "pnpm dedupe --check",
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"prepare": "husky",
+		"release": "dotenv release-it --",
 		"test": "vitest",
 		"tsc": "tsc"
 	},
@@ -46,6 +47,7 @@
 		"bignumber.js": "^9.1.2",
 		"console-fail-test": "^0.5.0",
 		"cspell": "^8.15.4",
+		"dotenv-cli": "^7.4.2",
 		"eslint": "^9.13.0",
 		"eslint-plugin-jsdoc": "^50.4.3",
 		"eslint-plugin-jsonc": "^2.16.0",
