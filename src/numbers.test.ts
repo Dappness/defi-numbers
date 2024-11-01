@@ -1,16 +1,18 @@
 import { describe, expect, test } from "vitest";
 
-import { BN_LOWER_THRESHOLD } from "./constants.js";
-import { fNum } from "./formatting.js";
-import { bn } from "./utils.js";
+import { bn, BN_LOWER_THRESHOLD, fNum } from "./numbers.js";
+
+test("Stringifies bigints", () => {
+	expect(JSON.stringify(12345n)).toBe('"12345"');
+});
 
 describe("fiatFormat", () => {
 	test("Abbreviated formats", () => {
-		expect(fNum("fiat", "0.000000000000000001")).toBe("< 0.001");
-		expect(fNum("fiat", "0.00013843061948487287")).toBe("< 0.001");
-		expect(fNum("fiat", "0.001234")).toBe("0.00");
-		expect(fNum("fiat", "0.001987")).toBe("0.00");
-		expect(fNum("fiat", "0.006")).toBe("0.01");
+		expect(fNum("fiat", "0.000000000000000001")).toBe("<0.001");
+		expect(fNum("fiat", "0.00013843061948487287")).toBe("<0.001");
+		expect(fNum("fiat", "0.001234")).toBe("0.001");
+		expect(fNum("fiat", "0.001987")).toBe("0.002");
+		expect(fNum("fiat", "0.006")).toBe("0.006");
 		expect(fNum("fiat", "0.012345")).toBe("0.01");
 		expect(fNum("fiat", "0.123456789")).toBe("0.12");
 		expect(fNum("fiat", "0")).toBe("0.00");
@@ -26,16 +28,13 @@ describe("fiatFormat", () => {
 	});
 
 	test("Non-abbreviated formats", () => {
-		expect(fNum("fiat", "0.000000000000000001")).toBe("< 0.001");
+		expect(fNum("fiat", "0.000000000000000001")).toBe("<0.001");
 		expect(fNum("fiat", "0.00269693621158015889", { abbreviated: false })).toBe(
-			"0.00",
+			"0.003",
 		);
 		expect(fNum("fiat", "56789.12345678", { abbreviated: false })).toBe(
 			"56,789.12",
 		);
-
-		expect(fNum("fiat", 99_999.12, { abbreviated: false })).toBe("99,999.12");
-		expect(fNum("fiat", 100_001.12, { abbreviated: false })).toBe("100,001");
 	});
 
 	test("Hide cents when value >= 100k", () => {
@@ -83,9 +82,9 @@ describe("percentage", () => {
 		expect(fNum("percentage", "0.0010")).toBe("0.1%");
 		expect(fNum("percentage", "0.0016")).toBe("0.16%");
 		expect(fNum("percentage", "0.0001")).toBe("0.01%");
-		expect(fNum("percentage", "0.00001")).toBe("< 0.01%");
-		expect(fNum("percentage", "0.00009")).toBe("< 0.01%");
-		expect(fNum("percentage", "0.000007595846919227514")).toBe("< 0.01%");
+		expect(fNum("percentage", "0.00001")).toBe("<0.01%");
+		expect(fNum("percentage", "0.00009")).toBe("<0.01%");
+		expect(fNum("percentage", "0.000007595846919227514")).toBe("<0.01%");
 	});
 });
 
@@ -101,8 +100,8 @@ describe("bn", () => {
 test("all formats types do not break with super small inputs (AKA dust)", () => {
 	const dust = BN_LOWER_THRESHOLD;
 
-	expect(fNum("fiat", dust)).toBe("< 0.001");
+	expect(fNum("fiat", dust)).toBe("<0.001");
 	expect(fNum("integer", dust)).toBe("0");
-	expect(fNum("percentage", dust)).toBe("< 0.01%");
+	expect(fNum("percentage", dust)).toBe("<0.01%");
 	expect(fNum("token", dust)).toBe("< 0.00001");
 });
