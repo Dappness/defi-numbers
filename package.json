@@ -4,7 +4,7 @@
 	"description": "Number formatting and utilities for DeFi apps.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Dappness/defi-numbers"
+		"url": "git+https://github.com/Dappness/defi-numbers.git"
 	},
 	"license": "MIT",
 	"author": {
